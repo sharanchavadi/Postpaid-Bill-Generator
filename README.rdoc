@@ -1,0 +1,45 @@
+The largest mobile service provider in India has decided to upgrade their portal, so far they have been sending their customers the bill in a pdf format containing bill details and call logs, but their customers have demanded for a GUI to display some numbers & statistics. The service provider has decided to hire you as a contractor to work on the dashboard for its customers. In their existing portal, they have the data for users, contact details and call logs coming from some external api and saved in the database (in this case you will run rake setup_data). They have agreed to provide inital data, you will focus on the querying the data present in the db and present it to the users in a graphical format. The following are the models with attributes 
+
+user - standard devise stuff
+contact - number, user_id & contact_type ("std", "local")
+logs - user_id, contact_id, call_date, duration, amount
+
+On the dashboard provide the details for the previous billing period ( note : data is available for the dates from 1st June 2017 to 30th June 2017 
+
+1. There is a report controller, once the user is logged in, the default action to be called is the index action. In the index action the following stats will need to be displayed to the user. 
+
+A. Total calls made 
+		* Total STD Calls
+		* Total Local Calls
+
+B. Total Bill Amount
+		* Total STD Calls Amount
+		* Total Local Calls Amount 
+
+2. In the contacts action, all the calls made to the contacts needs to be listed in a tabular format. Keep in mind a user could have called a number several times, you will need to list the number once, count &  amount eg. 
+
+---------------------------------
+sl | number 		| count | amount 
+---------------------------------
+1  | 9740411566 | 3			| 2.50
+2  | 8765432190 | 10 		| 22.50
+
+
+3. In the log action, display all the calls made in ascending order in a tabular format. 
+
+--------------------------------------------------
+sl | number 		| call date  | duration | amount | 
+--------------------------------------------------
+1	 | 9740411566 | 01/06/2017 | 00:30		| 0.50
+2  | 9740411566 | 01/06/2017 | 00:45    | 0.50
+3  | 9740411566 | 01/06/2017 | 01:45    | 1.00
+3  | 9740411567 | 01/06/2017 | 10:45    | 5.50
+
+
+There are 2 users
+email: "arvind@gmail.com", password: "secret123"
+email: "supriya@gmail.com", password: "secret123"
+
+ 
+
+
