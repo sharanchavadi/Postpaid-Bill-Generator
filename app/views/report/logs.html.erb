@@ -1,1 +1,25 @@
-<h2>Call Log</h2>
+<h2>Displaying all the calls made in order by call date in a tabular format </h2>
+
+
+<table border = '1'>
+  <thead>
+     <tr>
+        <th>Sno</th>
+        <th>Number</th>
+        <th>Call Date</th>
+        <th>Duration</th>
+        <th>Amount</th>
+     </tr>
+  </thead>
+  <tbody>
+        <% @logs.each_with_index do |log, index| %>
+            <tr>
+                 <td> <%= index+1 %></td>
+                 <td> <%= log.contact.number %> </td> 
+  		         <td> <%= log.call_date %> </td>
+  		         <td> <%= log.duration %> </td>
+  		         <td> <%= log.amount %> </td>
+  		    </tr>
+  	    <% end %>
+  </tbody>
+</table>

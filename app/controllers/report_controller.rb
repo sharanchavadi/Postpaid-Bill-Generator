@@ -7,7 +7,7 @@ class ReportController < ApplicationController
   end
 
   def logs
-   
+    @logs = current_user.logs.order('call_date')
   end
 
   def contacts
