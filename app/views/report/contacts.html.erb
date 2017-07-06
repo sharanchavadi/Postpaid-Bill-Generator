@@ -1,1 +1,35 @@
 <h2>List of contacts</h2>
+
+<table border = '1'>
+  <thead>
+     <tr>
+        <th>sno</th>
+        <th>Number</th>
+        <th>Count</th>
+        <th>Amount</th>
+     </tr>
+  </thead>
+  <tbody>
+         <% sno = 0 %>
+         <% @contacts.each do |contact| %>
+               <% count = 0 %>
+               <% amount = 0 %>
+               <% if contact.logs.empty? %>
+                     <% next %>
+               <% else %>
+                     <% contact.logs.each do |log| %>
+  		                  <% count += 1 %> 
+  	                      <% amount += log.amount %>
+  	                 <% end %>
+  	                 <tr>
+  	                     <td> <%= sno += 1 %></td>
+                         <td> <%= contact.number %> </td> 
+  	                     <td><%= count %></td>
+  	                     <td><%= amount %></td>
+                     </tr>
+               <% end %>
+         <% end %>
+  </tbody>
+</table>
+
+

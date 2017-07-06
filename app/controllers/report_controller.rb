@@ -11,7 +11,7 @@ class ReportController < ApplicationController
   end
 
   def contacts
-    
+  	@contacts = Contact.all
   end
 
 end

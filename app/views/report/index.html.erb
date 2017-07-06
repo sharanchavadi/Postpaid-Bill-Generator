@@ -3,6 +3,7 @@
 
 <h3>Total Local Calls </h3>
 
+<!--contact has many logs and log belogs to contact -->
 <% local_sum = 0 %>
 <% local_contacts = Contact.where('contact_type = ?', "local") %>
 <% local_contacts.each do |local_contact| %>
