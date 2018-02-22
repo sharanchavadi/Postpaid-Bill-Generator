@@ -9,6 +9,8 @@ gem 'devise'
 gem 'faker'
 gem 'chartkick'
 gem 'pry'
+gem 'wicked_pdf', '~> 1.1'
+gem 'wkhtmltopdf-binary'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

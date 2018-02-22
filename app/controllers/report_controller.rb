@@ -8,6 +8,15 @@ class ReportController < ApplicationController
 
   def logs
     @logs = current_user.logs.order('call_date')
+
+    respond_to do |format|
+    format.html
+    format.pdf do
+      render pdf: "logs"
+    end
+
+  end
+
   end
 
   def contacts
